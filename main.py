@@ -25,7 +25,7 @@ class Home:
         self.img_file2 = self.img_file2.resize((170,74))
         self.img_file2 = ImageTk.PhotoImage(self.img_file2)
 
-        self.b3 = Button(parent,image=self.img_file2, border = 0, highlightthickness=0)
+        self.b3 = Button(parent,image=self.img_file2, border = 0, highlightthickness=0, command = self.found)
         self.b3.place(x=430,y=255)
       
     def exit(self):
@@ -36,7 +36,13 @@ class Home:
       self.b2.destroy()
       self.b3.destroy()
       Lost(window)
-      
+
+    def found(self):
+      self.b1.destroy()
+      self.b2.destroy()
+      self.b3.destroy()
+      Found(window)
+
 
 class Lost:
     def __init__(self, parent):
@@ -45,13 +51,19 @@ class Lost:
         bg_image2 = bg_image2.resize((600,600),Image.ANTIALIAS)
         bg_image2 = ImageTk.PhotoImage(bg_image2) 
         image_label.configure(image = bg_image2) 
-        image_label.image=bg_image2
-
-        self.img_file2 = Image.open("found.png")
-        self.img_file2 = self.img_file2.resize((170,74))
-        self.img_file2 = ImageTk.PhotoImage(self.img_file2)
+        image_label.image=bg_image2     
 
 
+class Found:
+    def __init__(self, parent):
+
+        bg_image3 = Image.open("back3.png") 
+        bg_image3 = bg_image3.resize((600,600),Image.ANTIALIAS)
+        bg_image3 = ImageTk.PhotoImage(bg_image3) 
+        image_label.configure(image = bg_image3) 
+        image_label.image=bg_image3  
+
+      
        
       
 if __name__== "__main__": 
