@@ -22,11 +22,11 @@ class Home:
         self.b2.place(x=220,y=539)
 
         self.img_file2 = Image.open("found.png")
-        self.img_file2 = self.img_file2.resize((160,74))
+        self.img_file2 = self.img_file2.resize((170,74))
         self.img_file2 = ImageTk.PhotoImage(self.img_file2)
 
         self.b3 = Button(parent,image=self.img_file2, border = 0, highlightthickness=0)
-        self.b3.place(x=440,y=255)
+        self.b3.place(x=430,y=255)
       
     def exit(self):
       window.destroy()
@@ -46,6 +46,12 @@ class Lost:
         bg_image2 = ImageTk.PhotoImage(bg_image2) 
         image_label.configure(image = bg_image2) 
         image_label.image=bg_image2
+
+        self.img_file2 = Image.open("found.png")
+        self.img_file2 = self.img_file2.resize((170,74))
+        self.img_file2 = ImageTk.PhotoImage(self.img_file2)
+
+
        
       
 if __name__== "__main__": 
